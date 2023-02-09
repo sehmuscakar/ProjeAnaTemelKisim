@@ -1,0 +1,48 @@
+﻿@using Repository.Entities
+@model List<Tanıtım>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card mb-3">
+    <div class="card-header">
+        <h5 class="mb-0">Tanıtım listemiz</h5>
+    </div>
+    <!--/.bg-holder-->
+    <div class="card-body  bg-light">
+        <div class="row">
+            <div>
+                <table id="myTable" class="table table-striped  fs--1">
+                    <thead class="bg-200">
+                        <tr>
+                            <th>Oluşturlma Zamanı</th>
+                            <th>İsim</th>
+                            <th>Soyisim</th>
+                            <th>Yaş</th>
+                            <th>meslek</th>
+                            <th>Şehir</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CreatedAt</td>
+                                <td>@item.İsim</td>
+                                <td>@item.Soyisim</td>
+                                <td>@item.Yaş</td>
+                                <td>@item.Meslek</td>
+                                <td>@item.şehir</td>
+                                <td>
+                                    <a class="btn btn-outline-danger" asp-action="EditTanıtım" asp-controller="Tanıtım" asp-route-id="@item.Id">Güncelle</a>
+                                    <a class="btn btn-outline-info" asp-action="DeleteTanıtım" asp-controller="Tanıtım" asp-route-id="@item.Id">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

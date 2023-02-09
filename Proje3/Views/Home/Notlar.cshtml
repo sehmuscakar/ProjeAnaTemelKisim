@@ -1,0 +1,47 @@
+﻿@using Repository.Entities
+@model List<Notlar>
+@{
+    ViewData["Title"] = "Notlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card mb-3">
+    <div class="card-header">
+        <h5 class="mb-0">Not Alan öğrenci listemiz</h5>
+    </div>
+    <!--/.bg-holder-->
+    <div class="card-body  bg-light">
+        <div class="row">
+            <div>
+                <table id="myTable" class="table table-striped  fs--1">
+                    <thead class="bg-200">
+                        <tr>
+                            <th>Ders</th>
+                            <th>isim</th>
+                            <th>Soyadı</th>
+                            <th>Vize</th>
+                            <th>Final</th>
+                            <th>Bütünleme</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Ders</td>
+                                <td>@item.İsim</td>
+                                <td>@item.Soyadı</td>
+                                <td>@item.Vize</td>
+                                <td>@item.Final</td>
+                                <td>@item.Bütünleme</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,60 @@
+﻿@using Repository.Entities
+@model Tanıtım
+@{
+    ViewData["Title"] = "AddTanıtım";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form asp-action="AddTanıtım" asp-controller="Tanıtım" method="post" enctype="multipart/form-data" class="align-content-lg-stretch">
+
+    <div class="card-body position-relative bg-light">
+        <div class="row">
+            <input asp-for="@Model.Id" class="form-control" type="hidden" />
+            <input asp-for="@Model.RowOrder" class="form-control" type="hidden" />
+            <input asp-for="@Model.UpdatedAt" class="form-control" type="hidden" />
+            <input asp-for="@Model.UpdatedBy" class="form-control" type="hidden" />
+            <input asp-for="@Model.CreatedBy" class="form-control" type="hidden" />
+            <input asp-for="@Model.CreatedAt" class="form-control" type="hidden" />
+            <input asp-for="@Model.IsActive" type="hidden" class="form-control" />
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label">İsim</label>
+                    <input asp-for="@Model.İsim" class="form-control" class="form-control" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label">Soyisim</label>
+                    <input asp-for="@Model.Soyisim" class="form-control" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label">Yaş</label>
+                    <input asp-for="@Model.Yaş" class="form-control" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label">Şehir</label>
+                    <input asp-for="@Model.şehir" class="form-control" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label">Meslek</label>
+                    <input asp-for="@Model.Meslek" class="form-control" type="text" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="card mb-3">
+        <div class="card-footer">
+            <div class="mb-3 float-lg-right">
+                <button class="btn btn-primary btn-block mt-3" type="submit" value="Save">Ekle</button>
+            </div>
+        </div>
+    </div>
+</form>

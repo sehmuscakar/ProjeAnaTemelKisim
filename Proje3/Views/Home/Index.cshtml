@@ -1,0 +1,39 @@
+﻿@using Repository.Entities
+@model List<Tanıtım>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h5 class="mb-0">Tanıtım listemiz</h5>
+    </div>
+    <!--/.bg-holder-->
+    <div class="card-body  bg-light">
+        <div class="row">
+            <div>
+                <table id="myTable" class="table table-striped  fs--1">
+                    <thead class="bg-200">
+                        <tr>
+                            <th>İsim</th>
+                            <th>Soyisim</th>
+                            <th>Yaş</th>
+                            <th>meslek</th>
+                            <th>Şehir</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.İsim</td>
+                                <td>@item.Soyisim</td>
+                                <td>@item.Yaş</td>
+                                <td>@item.Meslek</td>
+                                <td>@item.şehir</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
